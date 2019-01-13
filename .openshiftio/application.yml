@@ -38,11 +38,15 @@ objects:
   kind: ImageStream
   metadata:
     name: mywebapp-image
+    labels:
+      app: mywebapp
   spec: {}
 - apiVersion: v1
   kind: ImageStream
   metadata:
     name: mywebapp-runtime
+    labels:
+      app: mywebapp
   spec: {}
 - apiVersion: v1
   kind: ImageStream
@@ -68,6 +72,8 @@ objects:
   kind: BuildConfig
   metadata:
     name: mywebapp-build
+    labels:
+      app: mywebapp
   spec:
     output:
       to:
@@ -104,6 +110,8 @@ objects:
   kind: BuildConfig
   metadata:
     name: mywebapp-runtime-build
+    labels:
+      app: mywebapp
   spec:
     output:
       to:
